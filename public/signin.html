@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="icon" href="Anime.png" />
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+    <title>Sign up</title>
+</head>
+
+<body>
+    <br>
+    <a href="index.html" class="back ml-5 d-flex flex-row align-items-center justify-content-between " style="width:5%">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" style="width:20px">
+        <h5 class="d-flex justify-content-center align-items-center mt-2" style="color: black;height: 20px;">
+            Back
+        </h5>
+    </a>
+    <div class="d-flex justify-content-center align-items-center mt-5 flex-column container">
+        <img class="logoimg" src="Anime.png" style="">
+        <br> <br>
+        <h3 class="font-weight-bold"> Sign in </h3>
+        <br>
+        <input class="rounded border border-2" type="email" name="" id="email" placeholder="Email "
+            style="width: 250px;height: 50px;" />
+        <br>
+        <input class="rounded border border-2" type="password" name="" id="pass" placeholder="password "
+            style="width: 250px;height: 50px;" />
+        <br>
+        <h4 class="error"></h4>
+        <br>
+        <button class="border-0 font-weight-bold rounded " id="signin"
+            style="width: 250px;height: 50px;background-color: red;color:white">Continue</button>
+        <br>
+        <a href="signup.html" style="color:black">Don't have a account . Sign in now </a>
+        <br>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyA4ExlkJcTvZ-sP-IoJCJAl0dYW0re22hY",
+            authDomain: "webb-391f1.firebaseapp.com",
+            databaseURL: "https://webb-391f1-default-rtdb.firebaseio.com",
+            projectId: "webb-391f1",
+            storageBucket: "webb-391f1.appspot.com",
+            messagingSenderId: "1060616430116",
+            appId: "1:1060616430116:web:49ffd07d9bbfd514112eb1",
+            measurementId: "G-VJXRLD7ZBY"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+    <script type="module" src="signin.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>

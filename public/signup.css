@@ -1,0 +1,21 @@
+@media screen and (max-width: 2560px) {
+  .logoimg {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 680px) {
+  .logoimg {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logoimg {
+    width: 60%;
+  }
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="Anime.png" />
+  <title>Anime Discover</title>
+  <script>
+    var loader = function () {
+      setTimeout(function () {
+        $('#loader').css({ 'opacity': 0, 'visibility': 'hidden' });
+      }, 2000);
+    };
+    window.onload = function () {
+      loader();
+    };
+  </script>
+  <style>
+    #loader {
+      background-color: #E6E6E6;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+    }
+
+    .loader-inner {
+      bottom: 0;
+      height: 60px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap {
+      animation:
+        spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+      box-sizing: border-box;
+      height: 50px;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      transform-origin: 50% 100%;
+      width: 100px;
+    }
+
+    .loader-line {
+      border: 4px solid transparent;
+      border-radius: 100%;
+      box-sizing: border-box;
+      height: 100px;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap:nth-child(1) {
+      animation-delay: -50ms;
+    }
+
+    .loader-line-wrap:nth-child(2) {
+      animation-delay: -100ms;
+    }
+
+    .loader-line-wrap:nth-child(3) {
+      animation-delay: -150ms;
+    }
+
+    .loader-line-wrap:nth-child(4) {
+      animation-delay: -200ms;
+    }
+
+    .loader-line-wrap:nth-child(5) {
+      animation-delay: -250ms;
+    }
+
+    .loader-line-wrap:nth-child(1) .loader-line {
+      border-color: hsl(0, 80%, 60%);
+      height: 90px;
+      width: 90px;
+      top: 7px;
+    }
+
+    .loader-line-wrap:nth-child(2) .loader-line {
+      border-color: hsl(60, 80%, 60%);
+      height: 76px;
+      width: 76px;
+      top: 14px;
+    }
+
+    .loader-line-wrap:nth-child(3) .loader-line {
+      border-color: hsl(120, 80%, 60%);
+      height: 62px;
+      width: 62px;
+      top: 21px;
+    }
+
+    .loader-line-wrap:nth-child(4) .loader-line {
+      border-color: hsl(180, 80%, 60%);
+      height: 48px;
+      width: 48px;
+      top: 28px;
+    }
+
+    .loader-line-wrap:nth-child(5) .loader-line {
+      border-color: hsl(240, 80%, 60%);
+      height: 34px;
+      width: 34px;
+      top: 35px;
+    }
+
+    @keyframes spin {
+
+      0%,
+      15% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar sticky-top bg-white" style="box-shadow: 0 0 10px 4px #E6E6E6; height: 80px;width: 100%; ">
+    <div class="d-flex flex-row  align-items-center justify-content-between" style="width:100%">
+      <diV>
+        <a class="navbar-brand">
+          <img class="logo image" src="Anime.png">
+        </a>
+      </diV>
+      <div>
+        <button class="home border-0 rounded-pill font-weight-bold"
+          style="background-color:black;color:white;height: 40px;" onclick="redicter()">Home</button>
+      </div>
+      <div class="input " style="height: 40px;">
+        <input id="myInput" class="input1 border-0 rounded-pill" style="background-color: #E6E6E6;height: 100%;"
+          type="text" placeholder="  Search" onclick="input()" />
+        <ul class="rounded border border-black" id="myUL"
+          style="list-style: none;background-color: white; display: none;">
+
+        </ul>
+      </div>
+      <div class="d-flex flex-column">
+        <i class=" bell fas fa-bell" style="font-size:20px" onclick="update()"></i>
+        <div class="updtt d-flex flex-column align-items-center justify-content-center rounded ">
+          <h4 class="update text-center bg-white pt-2 border border-dark rounded font-weight-bold" id="hide"
+            style="position:absolute; height: 400px;z-index: 0;overflow-x: scroll;display: none;">
+            Updates
+            <br><br>
+          </h4>
+        </div>
+      </div>
+
+      <div class="frm d-flex flex-column">
+
+        <button onclick="chuyenhuong()" class="home border-0 rounded-pill font-weight-bold"
+          style="background-color:black;color:white;height: 40px;">Log
+          in</button>
+      </div>
+      </a>
+    </div>
+
+
+  </nav>
+
+  <div class="checkyorn d-flex justify-content-center "
+    style="position:fixed;;z-index: 1000000;width: 100%; transform: translateX(0px);">
+    <h3 class="hh text-center pt-3 rounded border border-secondary font-weight-bold" style=" background-color: #F0F0F0;">Are you sure you want to save this photo?
+      <div class="framesbutton pt-3 pb-3 " style="">
+      </div>
+    </h3>
+
+  </div>
+  <br>
+  <div class="button container-fluid" style="position: fixed;z-index: 1000;" onclick="update1()">
+    <button class="refresh border-0 rounded-pill font-weight-bold"
+      style="background-color:black;color:white;height: 40px;box-shadow: 0 0 10px 4px #E6E6E6"
+      onclick="refresh()">Refresh</button>
+    <button class="refresh border-0 rounded-pill font-weight-bold"
+      style="background-color:black;color:white;height: 40px;box-shadow: 0 0 10px 4px #E6E6E6" onclick="showall()">Show
+      all </button>
+  </div>
+  <br class="br"><br class="br"><br class="br">
+  <h4 class="textpls text-center">Please login to save photos</h4>
+
+  <div class="framesimg container-fluid row d-flex justify-content-center " onclick="update1()">
+    <div class="framesimg1 container-fluid col-sm-4"></div>
+    <div class="framesimg2 container-fluid  col-sm-4"></div>
+    <div class="framesimg3 container-fluid  col-sm-4 "></div>
+  </div>
+  <script src="FileSaver.min.js"></script> 
+  <script src="index.js"></script>
+  <script src="https://kit.fontawesome.com/13f09ba1d5.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
